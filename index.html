@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/9e01d9b660.js" crossorigin="anonymous"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <title>Document</title>
+   <link rel="stylesheet" href="dist/style.css">
+   <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+</head>
+<body>
+   <div id="app">
+
+      <!-- NAVBAR -->
+      <nav>
+        <div class="outside__logo">
+            <img src="logo.png">
+        </div>
+
+        
+
+        <button class="navbarToggler" onclick="openMenu()">
+            <i class="fas fa-ellipsis-h"></i>
+        </button>
+          <div class="nav__container container flexCenter">
+            <img src="src/redFishUp.png" class="sushi__navIcon">
+            <img src="src/red_roll.png" class="sushi__navIcon">
+              <button class="close" onclick="closeMenu()"><i class="fas fa-times"></i></button>
+              <div class="nav__logo">
+                  <img src="logo.png">
+              </div>
+
+              <div class="nav__menu">
+                  <ul class="nav__ul flexCenter">
+                      <li class="nav__item"><a href="#home">HOME</a></li>
+                      <li class="nav__item"><a href="#product">PRODUCT</a></li>
+                      <li class="nav__item"><a href="#promo">PROMO</a></li>
+                      <li class="nav__item"><a href="#about">ABOUT</a></li>
+                      <li class="nav__item"><a href="#contact">CONTACT</a></li>
+                  </ul>
+              </div>
+
+              <div class="nav__search">
+                  <svg 
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="30px" height="30px">
+                  <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                  d="M20.900,17.801 C24.573,12.716 23.345,5.675 18.158,2.075 C12.971,-1.526 5.789,-0.322 2.116,4.764 C-1.556,9.849 -0.328,16.889 4.859,20.489 C8.562,23.060 13.456,23.258 17.361,20.997 L25.846,29.265 C26.762,30.210 28.286,30.248 29.250,29.350 C30.215,28.453 30.253,26.958 29.338,26.013 C29.309,25.983 29.281,25.955 29.250,25.927 L20.900,17.801 ZM11.501,18.573 C7.402,18.573 4.079,15.318 4.077,11.300 C4.076,7.281 7.396,4.023 11.496,4.021 C15.589,4.020 18.911,7.270 18.919,11.283 C18.926,15.302 15.607,18.565 11.506,18.573 C11.505,18.573 11.504,18.573 11.501,18.573 Z"/>
+                  </svg>
+              </div>
+
+
+          </div>
+      </nav>
+      <!-- NAVBAR END -->
+
+
+      <header class="header" id="home">
+          <div class="header__container container">
+              <div class="header__content">
+                  <h1 class="header__title"> {{title}} </h1>
+                  <p class="header__subtitle"> {{lorem15}}  </p>
+                  <a class="header__button" :href="orderLink">ORDER NOW</a>
+              </div>
+          </div>
+      </header>
+      <section class="bestSeller" id="product">
+          <div class="bestSeller__container container">
+              <div class="bestSeller__content flexCenterColumn">
+                  <img src="src/rice-sushi.png" alt="" class="sushi__icon">
+                  <img src="src/red-sushi.png" alt="" class="sushi__icon">
+                  <div class="bestSeller__firstContent flexCenterColumn">
+                      <h2>{{ secondTitle }}</h2>
+                      <p>{{lorem15}}</p>
+                  </div>
+                  <div class="bestSeller__secondContent">
+                    <div class="bestSeller__gridItem flexCenterColumn">
+                        <img src="src/cup-1.png" alt="">
+                        <h4>Title here</h4>
+                        <p>{{ lorem8 }}</p>
+                    </div>
+                    <div class="bestSeller__gridItem flexCenterColumn">
+                        <img src="src/cup-2.png" alt="">
+                        <h4>Title here</h4>
+                        <p>{{ lorem8 }}</p>
+                    </div>
+                    <div class="bestSeller__gridItem flexCenterColumn">
+                        <img src="src/cup-3.png" alt="">
+                        <h4>Title here</h4>
+                        <p>{{ lorem8 }}</p>
+                    </div>
+                    <div class="bestSeller__gridItem"></div>
+                    <div class="bestSeller__gridItem"></div>
+                </div>
+              </div>
+          </div>
+      </section>
+      <section class="bestTasty" id="promo">
+          <div class="bestTasty__container container">
+              <div class="bestTasty__content content__grid__dbl">
+                 <div class="bestTasty__gridItem_1 wow zoomIn" :class="gridDblImg">
+                     <img src="src/Eat.png" alt="">
+                 </div>
+                 <div class="bestTasty__gridItem_1" :class="gridDblTetx">
+                     <h2>{{title3}}</h2>
+                     <p>{{lorem15}}</p>
+                     <a :href="orderLink" class="flexCenter wow zoomIn">ORDER NOW</a>
+                 </div>
+              </div>
+          </div>
+      </section>
+      <section class="stat">
+          <div class="stat__container container">
+              <img src="src/red_sushi.png" alt="" class="sushi__icon">
+              <img src="src/red_roll.png" alt="" class="sushi__icon">
+
+              <div class="stat__content_tetx flexCenterColumn">
+                <h2>STATISTICS</h2>
+                <p>{{lorem15}}</p>
+              </div>
+              <div class="stat__content_grid-trpl">
+                  <div class="stat__grid_block flexCenter">
+                    <div class="stat__grid_item flexCenterColumn">
+                        <h2>123</h2>
+                        <h3>STORE</h3>
+                    </div>
+                  </div>
+                  <div class="stat__grid_block flexCenter">
+                    <div class="stat__grid_item flexCenterColumn">
+                        <h2>100</h2>
+                        <h3>MENU</h3>
+                    </div>
+                  </div>
+                  <div class="stat__grid_block flexCenter">
+                    <div class="stat__grid_item flexCenterColumn">
+                        <h2>200</h2>
+                        <h3>CHEFs</h3>
+                    </div>
+                  </div>
+               
+              </div>
+          </div>
+      </section>
+      <section class="delicious">
+        <div class="delicious__container container">
+            <img src="src/rice-sushi.png" alt="" class="delicious__icon">
+            <img src="src/redFishUp.png" alt="" class="delicious__icon">
+            <img src="src/red-sushi.png" alt="" class="delicious__icon">
+            <img src="src/fishUp.png" alt="" class="delicious__icon">
+            <div class="delicious__content content__grid__dbl">
+                <div class="delicious__grid_item grid__dbl_text flexCenterColumn">
+                    <h2>DELICIOUS</h2>
+                    <p>{{lorem15}}</p>
+                    <a href="#" class="flexCenter">ORDER NOW</a>
+                </div>
+                <div class="delicious__grid_item grid__dbl_image flexCenter">
+                    <img src="src/Delicious.png" alt="">
+                </div>
+            </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="about__container container">
+            <div class="about__content flexCenterColumn">
+                <img src="src/girl.png" alt="" class="about__img">
+                <p class="about__subtitle">{{comment}}</p>
+                <h3 class="about__title">Phoebe Fraizer</h3>
+            </div>
+        </div>
+      </section>
+      <section class="subscribe">
+          <img src="src/red_roll.png" alt="" class="sushi__icon">
+          <img src="src/red-sushi.png" alt="" class="sushi__icon">
+          <img src="src/red_sushi.png" alt="" class="sushi__icon">
+          <img src="src/redFishUp.png" alt="" class="sushi__icon">
+          <div class="subscribe__container container">
+              <div class="subscribe__content flexCenterColumn">
+                  <h2 class="subscribe__title">subscribe</h2>
+                  <p class="subtitle">{{lorem15}}</p>
+                  <form action="" class="subscribe__form">
+                      <input type="email" class="subscibe__input_email" placeholder="Your Email">
+                      <input type="submit" class="subscribe__input_submit" value="SUBSCRIBE">
+                  </form>
+              </div>
+          </div>
+      </section>
+
+
+      <footer id="contact">
+          <div class="footer__container container flexCenter">
+              <div class="footer__content">
+                  <div class="footer__textBlock">
+                      <h4 class="footer__title">
+                        Title here
+                      </h4>
+                      <p class="footer__subtitle">
+                          {{lorem15}}
+                      </p>
+                      <div class="footer__icons">
+                          <a href="" class="footer__icon">
+                              <i class="fab fa-instagram"></i>
+                          </a>
+                          <a href="" class="footer__icon">
+                              <i class="fab fa-facebook-f"></i>
+                          </a>
+                          <a href="" class="footer__icon">
+                              <i class="fab fa-twitter"></i>
+                          </a>
+                          <a href="" class="footer__icon">
+                              <i class="fab fa-whatsapp"></i>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="footer__links_container">
+                      <div class="footer__linksBlocks">
+                          <h4 class="footer__title">
+                              <a href="#">About</a>
+                          </h4>
+                          <ul>
+                              <li><a href="">History</a></li>
+                              <li><a href="">Our Team</a></li>
+                              <li><a href="">Brand guidelines</a></li>
+                              <li><a href="">Terms & Conditions</a></li>
+                              <li><a href="">Privacy Policy</a></li>
+                          </ul>
+                      </div>
+                      <div class="footer__linksBlocks">
+                        <h4 class="footer__title">
+                            <a href="#">Services</a>
+                        </h4>
+                        <ul>
+                            <li><a href="">How to order</a></li>
+                            <li><a href="">Our Product</a></li>
+                            <li><a href="">Order Status</a></li>
+                            <li><a href="">Promo</a></li>
+                            <li><a href="">Payment Method</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__linksBlocks">
+                        <h4 class="footer__title">
+                            <a href="#">Other</a>
+                        </h4>
+                        <ul>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">F.A.Q</a></li>
+                            <li><a href="">Privacy</a></li>
+                        </ul>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div>
+  <script src="node_modules/vue/dist/vue.min.js"></script>
+  <script src="/node_modules/wowjs/dist/wow.min.js"></script>
+  <script>
+      new WOW().init();
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
